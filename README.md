@@ -1,22 +1,6 @@
 # Sorting Algorithm Visualizer
 
-![Views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fyourusername%2Fsorting-visualizer&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false)
-![GitHub stars](https://img.shields.io/github/stars/yourusername/sorting-visualizer?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/sorting-visualizer?style=social)
-
 A web-based interactive tool for visualizing sorting algorithms with 3D animations and real-time performance metrics.
-
----
-
-### Connect with Me
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourprofile)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/yourhandle)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yourusername)
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white)](https://yourwebsite.com)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your.email@example.com)
-
----
 
 ## Overview
 
@@ -109,32 +93,27 @@ Then navigate to `http://localhost:8000`
 - **Orange**: Elements being swapped
 - **Green**: Sorted elements
 
-## License
+## 🔗 Connect with me 
 
-This project is licensed under the MIT License.
+<a href="https://leetcode.com/u/vaibhav125s/" target="_blank"> 
+  <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode Profile"/> 
+</a> 
+&nbsp;
+<a href="https://www.linkedin.com/in/vaibhavsingh125/" target="_blank"> 
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Profile"/> 
+</a>
+&nbsp;
+<a href="https://github.com/Vaibhav-12521" target="_blank"> 
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Profile"/> 
+</a>
 
-## Acknowledgments
 
-Built for educational purposes to help students and developers understand sorting algorithms through visual learning.
-
----
-
-## Support
-
-If you found this project helpful, please consider:
-- ⭐ Starring the repository
-- 🔄 Sharing it with others
-- 🐛 Reporting bugs or suggesting features
-
-## Stay Connected
-
-Follow for more projects and updates:
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourprofile)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/yourhandle)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yourusername)
 
 ---
 
-<p align="center">Made with ❤️ for the coding community</p>
-<p align="center">© 2025 Sorting Algorithm Visualizer</p>
+Feel free to star ⭐ the repo if you find it helpful!
+
+<p align="center">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=second-largest-problem" alt="visitor badge"/>
+</p>
+
