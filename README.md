@@ -1,205 +1,140 @@
-# 3D Sorting Algorithm Visualizer
+# Sorting Algorithm Visualizer
 
-An interactive web application that provides stunning 3D visualizations of popular sorting algorithms. Watch algorithms come to life with real-time animations, statistics, and performance comparisons.
+![Views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fyourusername%2Fsorting-visualizer&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false)
+![GitHub stars](https://img.shields.io/github/stars/yourusername/sorting-visualizer?style=social)
+![GitHub forks](https://img.shields.io/github/forks/yourusername/sorting-visualizer?style=social)
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-
-## 🌟 Features
-
-### Interactive Visualization
-- **3D Animated Arrays**: Watch sorting algorithms in action with beautiful 3D bar representations
-- **Real-time Statistics**: Track comparisons, swaps, and execution time
-- **Adjustable Speed**: Control animation speed from 1-10
-- **Dynamic Array Size**: Visualize arrays from 5 to 50 elements
-
-### Supported Algorithms
-- **Bubble Sort** - O(n²) time complexity
-- **Quick Sort** - O(n log n) average time complexity
-- **Merge Sort** - O(n log n) time complexity
-- **Insertion Sort** - O(n²) time complexity
-- **Selection Sort** - O(n²) time complexity
-- **Heap Sort** - O(n log n) time complexity
-
-### Educational Content
-- **Algorithm Information**: Detailed descriptions and complexity analysis
-- **Code Examples**: View JavaScript implementations for each algorithm
-- **Performance Comparison**: Compare multiple algorithms side-by-side
-- **Complexity Badges**: Quick reference for time and space complexity
-
-## 🚀 Getting Started
-
-### Prerequisites
-- A modern web browser (Chrome, Firefox, Safari, or Edge)
-- No server setup required - runs entirely in the browser
-
-### Installation
-
-1. **Clone or Download the Repository**
-   ```bash
-   git clone <repository-url>
-   cd sorting-visualizer
-   ```
-
-2. **Open in Browser**
-   - Simply open `index.html` in your web browser
-   - Or use a local server:
-     ```bash
-     # Python 3
-     python -m http.server 8000
-     
-     # Python 2
-     python -m SimpleHTTPServer 8000
-     
-     # Node.js (with http-server)
-     npx http-server
-     ```
-
-3. **Start Visualizing!**
-   - Navigate to `http://localhost:8000` if using a local server
-   - Or directly open the `index.html` file
-
-## 📖 How to Use
-
-### Visualizer Tab
-1. Select an algorithm from the dropdown menu
-2. Adjust the array size (5-50 elements)
-3. Set your preferred animation speed
-4. Click "Generate Array" to create a random array
-5. Press "Start Sorting" to begin the visualization
-6. Monitor real-time statistics on the left panel
-7. View algorithm details on the right panel
-
-### Algorithms Tab
-- Browse through detailed information cards for each algorithm
-- Learn about best, average, and worst-case scenarios
-- Understand space complexity and stability properties
-
-### Code Tab
-- View clean JavaScript implementations
-- Study the logic behind each sorting algorithm
-- Copy code snippets for your own projects
-
-### Compare Tab
-1. Select 2 or more algorithms to compare
-2. Click "Run Comparison"
-3. View results in a detailed table
-4. Analyze performance with the visual chart
-
-## 🎨 Visual Elements
-
-### Color Coding
-- **Blue**: Normal state (unsorted elements)
-- **Red**: Comparing elements
-- **Orange**: Swapping elements
-- **Green**: Sorted elements
-
-### 3D Effects
-- Perspective transforms for depth perception
-- Hover effects on panels and cards
-- Smooth transitions and animations
-- Gradient backgrounds and shadows
-
-## 📁 Project Structure
-
-```
-sorting-visualizer/
-│
-├── index.html          # Main HTML structure
-├── styles.css          # All styling and animations
-├── script.js           # Core JavaScript logic
-└── README.md          # Project documentation
-```
-
-## 🛠️ Technologies Used
-
-- **HTML5**: Semantic markup and Canvas API
-- **CSS3**: Advanced styling, animations, and 3D transforms
-- **JavaScript (ES6+)**: Async/await, arrow functions, modern syntax
-- **Canvas API**: 3D bar rendering and animations
-- **Font Awesome**: Icon library
-- **Google Fonts**: Poppins font family
-
-## 🎯 Key Features Explained
-
-### Adaptive Performance
-- Automatically adjusts visualization speed
-- Handles arrays of varying sizes efficiently
-- Smooth animations without blocking the UI
-
-### Responsive Design
-- Works on desktop, tablet, and mobile devices
-- Adaptive layouts for different screen sizes
-- Touch-friendly controls
-
-### Educational Focus
-- Clear complexity notations (Big O)
-- Best/average/worst case explanations
-- Stability indicators
-- Real-world use cases
-
-## 🔧 Customization
-
-### Modify Colors
-Edit the color schemes in `styles.css`:
-```css
-.array-element.comparing {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-}
-```
-
-### Add New Algorithms
-1. Add algorithm info to `algorithmInfo` object in `script.js`
-2. Implement the animated version (e.g., `newAlgorithmAnimated()`)
-3. Add test version for comparisons (e.g., `newAlgorithmTest()`)
-4. Update HTML with new option and code block
-
-### Adjust Animation Speed
-Modify delay calculation in `script.js`:
-```javascript
-await delay(101 - speed * 10);
-```
-
-## 📊 Performance Comparison
-
-The comparison feature allows you to:
-- Test algorithms with identical random arrays
-- Measure execution time in milliseconds
-- Count comparisons and swaps
-- Generate efficiency ratings
-- Visualize results in a bar chart
-
-## 🐛 Known Issues
-
-- Very large arrays (>50 elements) may cause performance degradation
-- Mobile devices may experience slower animations
-- Canvas rendering may vary across browsers
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-- Report bugs
-- Suggest new features
-- Submit pull requests
-- Improve documentation
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🙏 Acknowledgments
-
-- Sorting algorithm concepts from computer science fundamentals
-- Design inspiration from modern web applications
-- Font Awesome for icons
-- Google Fonts for typography
-
-## 📧 Contact
-
-For questions, suggestions, or feedback, please open an issue on the repository.
+A web-based interactive tool for visualizing sorting algorithms with 3D animations and real-time performance metrics.
 
 ---
 
-**Happy Sorting! 🎉**
+### Connect with Me
 
-*Learn, visualize, and master sorting algorithms with interactive 3D animations.*
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourprofile)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/yourhandle)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yourusername)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white)](https://yourwebsite.com)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your.email@example.com)
+
+---
+
+## Overview
+
+This application provides an educational platform to understand and compare various sorting algorithms through visual representation. Users can observe how different algorithms process data, track their performance metrics, and analyze their efficiency.
+
+## Features
+
+- Interactive 3D visualization of sorting processes
+- Real-time tracking of comparisons, swaps, and execution time
+- Six sorting algorithms: Bubble Sort, Quick Sort, Merge Sort, Insertion Sort, Selection Sort, and Heap Sort
+- Adjustable array size (5-50 elements) and animation speed (1-10)
+- Side-by-side algorithm comparison with performance metrics
+- Detailed algorithm information including time and space complexity
+- Code implementation examples for each algorithm
+- Responsive design for desktop and mobile devices
+
+## Getting Started
+
+### Requirements
+
+- Modern web browser (Chrome, Firefox, Safari, or Edge recommended)
+- No additional dependencies or installations required
+
+### Installation
+
+1. Download or clone the repository
+2. Open `index.html` in your web browser
+
+Alternatively, run a local server:
+
+```bash
+# Using Python 3
+python -m http.server 8000
+
+# Using Node.js
+npx http-server
+```
+
+Then navigate to `http://localhost:8000`
+
+## Usage
+
+### Visualizer
+
+1. Select an algorithm from the dropdown menu
+2. Adjust array size and animation speed using the sliders
+3. Click "Generate Array" to create a new random array
+4. Click "Start Sorting" to begin visualization
+5. View statistics and algorithm details in side panels
+
+### Algorithm Comparison
+
+1. Navigate to the "Compare" tab
+2. Select multiple algorithms using checkboxes
+3. Click "Run Comparison"
+4. Review performance metrics in the results table and chart
+
+## Project Structure
+
+```
+├── index.html          # Application structure
+├── styles.css          # Styling and animations
+├── script.js           # Core logic and algorithms
+└── README.md          # Documentation
+```
+
+## Technologies
+
+- HTML5 Canvas for rendering visualizations
+- CSS3 for styling and 3D transforms
+- Vanilla JavaScript (ES6+)
+- Font Awesome for icons
+- Google Fonts (Poppins)
+
+## Algorithms Included
+
+| Algorithm | Time Complexity (Avg) | Space Complexity | Stable |
+|-----------|----------------------|------------------|--------|
+| Bubble Sort | O(n²) | O(1) | Yes |
+| Quick Sort | O(n log n) | O(log n) | No |
+| Merge Sort | O(n log n) | O(n) | Yes |
+| Insertion Sort | O(n²) | O(1) | Yes |
+| Selection Sort | O(n²) | O(1) | No |
+| Heap Sort | O(n log n) | O(1) | No |
+
+## Color Legend
+
+- **Blue**: Unsorted elements
+- **Red**: Elements being compared
+- **Orange**: Elements being swapped
+- **Green**: Sorted elements
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgments
+
+Built for educational purposes to help students and developers understand sorting algorithms through visual learning.
+
+---
+
+## Support
+
+If you found this project helpful, please consider:
+- ⭐ Starring the repository
+- 🔄 Sharing it with others
+- 🐛 Reporting bugs or suggesting features
+
+## Stay Connected
+
+Follow for more projects and updates:
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourprofile)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/yourhandle)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yourusername)
+
+---
+
+<p align="center">Made with ❤️ for the coding community</p>
+<p align="center">© 2025 Sorting Algorithm Visualizer</p>
