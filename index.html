@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Sorting Algorithm Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <i class="fas fa-cube"></i>
+                    3D Sorting Algorithm Visualizer
+                </h1>
+                <p class="subtitle">Interactive 3D demonstrations of sorting algorithms</p>
+            </div>
+        </header>
+        <nav class="nav-bar">
+            <div class="nav-content">
+                <button class="nav-btn active" data-section="visualizer">
+                    <i class="fas fa-play"></i> Visualizer
+                </button>
+                <button class="nav-btn" data-section="algorithms">
+                    <i class="fas fa-book"></i> Algorithms
+                </button>
+                <button class="nav-btn" data-section="code">
+                    <i class="fas fa-code"></i> Code
+                </button>
+                <button class="nav-btn" data-section="compare">
+                    <i class="fas fa-chart-bar"></i> Compare
+                </button>
+            </div>
+        </nav>
+        <main class="main-content">
+            <section id="visualizer" class="section active">
+                <div class="controls-panel">
+                    <div class="control-group">
+                        <label for="algorithm-select">Algorithm:</label>
+                        <select id="algorithm-select" class="control-input">
+                            <option value="bubble">Bubble Sort</option>
+                            <option value="quick">Quick Sort</option>
+                            <option value="merge">Merge Sort</option>
+                            <option value="insertion">Insertion Sort</option>
+                            <option value="selection">Selection Sort</option>
+                            <option value="heap">Heap Sort</option>
+                        </select>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="array-size">Array Size:</label>
+                        <input type="range" id="array-size" class="control-input" min="5" max="50" value="20">
+                        <span id="array-size-value">20</span>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="speed">Speed:</label>
+                        <input type="range" id="speed" class="control-input" min="1" max="10" value="5">
+                        <span id="speed-value">5</span>
+                    </div>
+                    
+                    <div class="control-buttons">
+                        <button id="generate-btn" class="btn btn-secondary">
+                            <i class="fas fa-random"></i> Generate Array
+                        </button>
+                        <button id="start-btn" class="btn btn-primary">
+                            <i class="fas fa-play"></i> Start Sorting
+                        </button>
+                        <button id="reset-btn" class="btn btn-danger">
+                            <i class="fas fa-stop"></i> Reset
+                        </button>
+                    </div>
+                </div>
+
+                <div class="visualization-container">
+                    <div class="stats-panel">
+                        <div class="stat-item">
+                            <span class="stat-label">Comparisons:</span>
+                            <span id="comparisons" class="stat-value">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Swaps:</span>
+                            <span id="swaps" class="stat-value">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Time:</span>
+                            <span id="time" class="stat-value">0ms</span>
+                        </div>
+                    </div>
+                    
+                    <div id="canvas-container" class="canvas-container">
+                        <canvas id="visualization-canvas"></canvas>
+                    </div>
+                    
+                    <div class="algorithm-info">
+                        <h3 id="current-algorithm">Bubble Sort</h3>
+                        <p id="algorithm-description">
+                            Bubble sort repeatedly compares adjacent elements and swaps them if they're in the wrong order.
+                        </p>
+                        <div class="complexity-info">
+                            <span class="complexity-item">
+                                <strong>Time:</strong> <span id="time-complexity">O(n²)</span>
+                            </span>
+                            <span class="complexity-item">
+                                <strong>Space:</strong> <span id="space-complexity">O(1)</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="algorithms" class="section">
+                <div class="algorithms-grid">
+                    <div class="algorithm-card" data-algorithm="bubble">
+                        <div class="card-header">
+                            <h3>Bubble Sort</h3>
+                            <div class="complexity-badge">O(n²)</div>
+                        </div>
+                        <div class="card-content">
+                            <p>A simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.</p>
+                            <ul>
+                                <li><strong>Best Case:</strong> O(n) when array is already sorted</li>
+                                <li><strong>Average Case:</strong> O(n²)</li>
+                                <li><strong>Worst Case:</strong> O(n²)</li>
+                                <li><strong>Space Complexity:</strong> O(1)</li>
+                                <li><strong>Stable:</strong> Yes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="algorithm-card" data-algorithm="quick">
+                        <div class="card-header">
+                            <h3>Quick Sort</h3>
+                            <div class="complexity-badge">O(n log n)</div>
+                        </div>
+                        <div class="card-content">
+                            <p>An efficient divide-and-conquer algorithm that picks a 'pivot' element and partitions the array around it.</p>
+                            <ul>
+                                <li><strong>Best Case:</strong> O(n log n)</li>
+                                <li><strong>Average Case:</strong> O(n log n)</li>
+                                <li><strong>Worst Case:</strong> O(n²)</li>
+                                <li><strong>Space Complexity:</strong> O(log n)</li>
+                                <li><strong>Stable:</strong> No</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="algorithm-card" data-algorithm="merge">
+                        <div class="card-header">
+                            <h3>Merge Sort</h3>
+                            <div class="complexity-badge">O(n log n)</div>
+                        </div>
+                        <div class="card-content">
+                            <p>A stable divide-and-conquer algorithm that divides the array into halves, sorts them, and then merges them back together.</p>
+                            <ul>
+                                <li><strong>Best Case:</strong> O(n log n)</li>
+                                <li><strong>Average Case:</strong> O(n log n)</li>
+                                <li><strong>Worst Case:</strong> O(n log n)</li>
+                                <li><strong>Space Complexity:</strong> O(n)</li>
+                                <li><strong>Stable:</strong> Yes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="algorithm-card" data-algorithm="insertion">
+                        <div class="card-header">
+                            <h3>Insertion Sort</h3>
+                            <div class="complexity-badge">O(n²)</div>
+                        </div>
+                        <div class="card-content">
+                            <p>Builds the final sorted array one item at a time by inserting each element into its proper position.</p>
+                            <ul>
+                                <li><strong>Best Case:</strong> O(n) when array is already sorted</li>
+                                <li><strong>Average Case:</strong> O(n²)</li>
+                                <li><strong>Worst Case:</strong> O(n²)</li>
+                                <li><strong>Space Complexity:</strong> O(1)</li>
+                                <li><strong>Stable:</strong> Yes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="algorithm-card" data-algorithm="selection">
+                        <div class="card-header">
+                            <h3>Selection Sort</h3>
+                            <div class="complexity-badge">O(n²)</div>
+                        </div>
+                        <div class="card-content">
+                            <p>Finds the minimum element from the unsorted part and places it at the beginning of the sorted part.</p>
+                            <ul>
+                                <li><strong>Best Case:</strong> O(n²)</li>
+                                <li><strong>Average Case:</strong> O(n²)</li>
+                                <li><strong>Worst Case:</strong> O(n²)</li>
+                                <li><strong>Space Complexity:</strong> O(1)</li>
+                                <li><strong>Stable:</strong> No</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="algorithm-card" data-algorithm="heap">
+                        <div class="card-header">
+                            <h3>Heap Sort</h3>
+                            <div class="complexity-badge">O(n log n)</div>
+                        </div>
+                        <div class="card-content">
+                            <p>Uses a binary heap data structure to sort elements by repeatedly extracting the maximum element.</p>
+                            <ul>
+                                <li><strong>Best Case:</strong> O(n log n)</li>
+                                <li><strong>Average Case:</strong> O(n log n)</li>
+                                <li><strong>Worst Case:</strong> O(n log n)</li>
+                                <li><strong>Space Complexity:</strong> O(1)</li>
+                                <li><strong>Stable:</strong> No</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="code" class="section">
+                <div class="code-container">
+                    <div class="code-selector">
+                        <button class="code-btn active" data-code="bubble">Bubble Sort</button>
+                        <button class="code-btn" data-code="quick">Quick Sort</button>
+                        <button class="code-btn" data-code="merge">Merge Sort</button>
+                        <button class="code-btn" data-code="insertion">Insertion Sort</button>
+                        <button class="code-btn" data-code="selection">Selection Sort</button>
+                        <button class="code-btn" data-code="heap">Heap Sort</button>
+                    </div>
+                    
+                    <div class="code-display">
+                        <div id="code-bubble" class="code-block active">
+                            <h3>Bubble Sort Implementation</h3>
+                            <pre><code>function bubbleSort(arr) {
+    const n = arr.length;
+    let comparisons = 0;
+    let swaps = 0;
+    
+    for (let i = 0; i < n - 1; i++) {
+        let swapped = false;
+        
+        for (let j = 0; j < n - i - 1; j++) {
+            comparisons++;
+            
+            if (arr[j] > arr[j + 1]) {
+                // Swap elements
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                swaps++;
+                swapped = true;
+            }
+        }
+        
+        // If no swapping occurred, array is sorted
+        if (!swapped) break;
+    }
+    
+    return { array: arr, comparisons, swaps };
+}</code></pre>
+                        </div>
+                        
+                        <div id="code-quick" class="code-block">
+                            <h3>Quick Sort Implementation</h3>
+                            <pre><code>function quickSort(arr, low = 0, high = arr.length - 1) {
+    if (low < high) {
+        const pivotIndex = partition(arr, low, high);
+        
+        quickSort(arr, low, pivotIndex - 1);
+        quickSort(arr, pivotIndex + 1, high);
+    }
+    return arr;
+}
+
+function partition(arr, low, high) {
+    const pivot = arr[high];
+    let i = low - 1;
+    
+    for (let j = low; j < high; j++) {
+        if (arr[j] <= pivot) {
+            i++;
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+    }
+    
+    [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
+    return i + 1;
+}</code></pre>
+                        </div>
+                        
+                        <div id="code-merge" class="code-block">
+                            <h3>Merge Sort Implementation</h3>
+                            <pre><code>function mergeSort(arr) {
+    if (arr.length <= 1) return arr;
+    
+    const mid = Math.floor(arr.length / 2);
+    const left = arr.slice(0, mid);
+    const right = arr.slice(mid);
+    
+    return merge(mergeSort(left), mergeSort(right));
+}
+
+function merge(left, right) {
+    let result = [];
+    let leftIndex = 0;
+    let rightIndex = 0;
+    
+    while (leftIndex < left.length && rightIndex < right.length) {
+        if (left[leftIndex] <= right[rightIndex]) {
+            result.push(left[leftIndex]);
+            leftIndex++;
+        } else {
+            result.push(right[rightIndex]);
+            rightIndex++;
+        }
+    }
+    
+    return result
+        .concat(left.slice(leftIndex))
+        .concat(right.slice(rightIndex));
+}</code></pre>
+                        </div>
+                        
+                        <div id="code-insertion" class="code-block">
+                            <h3>Insertion Sort Implementation</h3>
+                            <pre><code>function insertionSort(arr) {
+    let comparisons = 0;
+    let swaps = 0;
+    
+    for (let i = 1; i < arr.length; i++) {
+        let key = arr[i];
+        let j = i - 1;
+        
+        while (j >= 0 && arr[j] > key) {
+            comparisons++;
+            arr[j + 1] = arr[j];
+            swaps++;
+            j--;
+        }
+        
+        if (j >= 0) comparisons++;
+        arr[j + 1] = key;
+    }
+    
+    return { array: arr, comparisons, swaps };
+}</code></pre>
+                        </div>
+                        
+                        <div id="code-selection" class="code-block">
+                            <h3>Selection Sort Implementation</h3>
+                            <pre><code>function selectionSort(arr) {
+    let comparisons = 0;
+    let swaps = 0;
+    
+    for (let i = 0; i < arr.length - 1; i++) {
+        let minIndex = i;
+        
+        for (let j = i + 1; j < arr.length; j++) {
+            comparisons++;
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        
+        if (minIndex !== i) {
+            [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+            swaps++;
+        }
+    }
+    
+    return { array: arr, comparisons, swaps };
+}</code></pre>
+                        </div>
+                        
+                        <div id="code-heap" class="code-block">
+                            <h3>Heap Sort Implementation</h3>
+                            <pre><code>function heapSort(arr) {
+    const n = arr.length;
+    
+    // Build max heap
+    for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
+        heapify(arr, n, i);
+    }
+    
+    // Extract elements from heap one by one
+    for (let i = n - 1; i > 0; i--) {
+        [arr[0], arr[i]] = [arr[i], arr[0]];
+        heapify(arr, i, 0);
+    }
+    
+    return arr;
+}
+
+function heapify(arr, n, i) {
+    let largest = i;
+    const left = 2 * i + 1;
+    const right = 2 * i + 2;
+    
+    if (left < n && arr[left] > arr[largest]) {
+        largest = left;
+    }
+    
+    if (right < n && arr[right] > arr[largest]) {
+        largest = right;
+    }
+    
+    if (largest !== i) {
+        [arr[i], arr[largest]] = [arr[largest], arr[i]];
+        heapify(arr, n, largest);
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="compare" class="section">
+                <div class="compare-container">
+                    <h2>Algorithm Comparison</h2>
+                    
+                    <div class="comparison-controls">
+                        <div class="control-group">
+                            <label>Compare Algorithms:</label>
+                            <div class="algorithm-checkboxes">
+                                <label><input type="checkbox" value="bubble" checked> Bubble Sort</label>
+                                <label><input type="checkbox" value="quick" checked> Quick Sort</label>
+                                <label><input type="checkbox" value="merge" checked> Merge Sort</label>
+                                <label><input type="checkbox" value="insertion"> Insertion Sort</label>
+                                <label><input type="checkbox" value="selection"> Selection Sort</label>
+                                <label><input type="checkbox" value="heap"> Heap Sort</label>
+                            </div>
+                        </div>
+                        
+                        <button id="run-comparison" class="btn btn-primary">
+                            <i class="fas fa-chart-line"></i> Run Comparison
+                        </button>
+                    </div>
+                    
+                    <div id="comparison-results" class="comparison-results">
+                        <div class="results-table-container">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Algorithm</th>
+                                        <th>Time (ms)</th>
+                                        <th>Comparisons</th>
+                                        <th>Swaps</th>
+                                        <th>Efficiency</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="results-tbody">
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="chart-container">
+                            <canvas id="comparison-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2025 3D Sorting Algorithm Visualizer. Educational tool for understanding sorting algorithms.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
